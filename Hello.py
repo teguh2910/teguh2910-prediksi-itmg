@@ -1,11 +1,10 @@
-import streamlit as st # type: ignore
+import streamlit as st 
 from datetime import date
 import pickle
 
-import yfinance as yf # type: ignore
-#from prophet import Prophet # type: ignore
-from prophet.plot import plot_plotly # type: ignore
-from plotly import graph_objs as go # type: ignore
+import yfinance as yf
+from prophet.plot import plot_plotly
+from plotly import graph_objs as go
 
 START = "2007-12-18"
 TODAY = date.today().strftime("%Y-%m-%d")
@@ -44,9 +43,9 @@ def load_data(ticker):
     return data
 
 	
-#data_load_state = st.text('Loading data...')
+data_load_state = st.text('Loading data...')
 data = load_data(selected_stock)
-# data_load_state.text('Loading data... done!')
+data_load_state.text('Loading data... done!')
 
 # st.subheader('Raw data')
 # st.write(data.tail())
@@ -62,7 +61,7 @@ def plot_raw_data():
 plot_raw_data()
 
 df_train = data[['Date','Close']]
-df_train = df_train.rename(columns={"Date": "ds", "Close": "y"})
+#df_train = df_train.rename(columns={"Date": "ds", "Close": "y"})
 
 #m = Prophet()
 #m.fit(df_train)
