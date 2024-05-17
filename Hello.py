@@ -2,7 +2,7 @@ import streamlit as st # type: ignore
 from datetime import date
 
 import yfinance as yf # type: ignore
-from prophet import Prophet # type: ignore
+#from prophet import Prophet # type: ignore
 from prophet.plot import plot_plotly # type: ignore
 from plotly import graph_objs as go # type: ignore
 
@@ -64,8 +64,9 @@ plot_raw_data()
 df_train = data[['Date','Close']]
 df_train = df_train.rename(columns={"Date": "ds", "Close": "y"})
 
-m = Prophet()
-m.fit(df_train)
+#m = Prophet()
+#m.fit(df_train)
+m = pickle.load(open('rnn_model_by_teguh.sav', 'rb'))
 future = m.make_future_dataframe(periods=period)
 forecast = m.predict(future)
 
