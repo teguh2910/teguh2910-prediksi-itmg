@@ -1,5 +1,6 @@
 import streamlit as st # type: ignore
 from datetime import date
+import pickle
 
 import yfinance as yf # type: ignore
 #from prophet import Prophet # type: ignore
