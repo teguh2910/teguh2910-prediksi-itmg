@@ -61,7 +61,7 @@ def plot_raw_data():
 plot_raw_data()
 
 df_train = data[['Date','Close']]
-#df_train = df_train.rename(columns={"Date": "ds", "Close": "y"})
+df_train = df_train.rename(columns={"Date": "tanngal", "Close": "harga"})
 
 #m = Prophet()
 #m.fit(df_train)
