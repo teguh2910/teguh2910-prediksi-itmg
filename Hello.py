@@ -1,16 +1,13 @@
 import streamlit as st 
 from datetime import date
 import pickle
-
 import yfinance as yf
-from prophet.plot import plot_plotly
 from plotly import graph_objs as go
 
 START = "2007-12-18"
 TODAY = date.today().strftime("%Y-%m-%d")
 
 selected_stock = 'ITMG.JK'
-#st.image("https://itmg.co.id/img/logo.png", width=200)
 centered_image_html = """
 <div style="display: flex; justify-content: center; align-items: center;">
     <img src="https://itmg.co.id/img/logo.png" width="200">
@@ -43,14 +40,8 @@ def load_data(ticker):
     return data
 
 	
-data_load_state = st.text('Loading data...')
 data = load_data(selected_stock)
-data_load_state.text('Loading data... done!')
 
-# st.subheader('Raw data')
-# st.write(data.tail())
-
-# Plot raw data
 def plot_raw_data():
 	fig = go.Figure()
 	fig.add_trace(go.Scatter(x=data['Date'], y=data['Open'], name="stock_open"))
@@ -66,7 +57,6 @@ forecast = m.predict(future)
 
 # Show and plot forecast
 st.subheader('Forecast data')
-# st.write(forecast.tail())
     
 st.write(f'Forecast plot for {n_years} years')
 fig1 = plot_plotly(m, forecast)
