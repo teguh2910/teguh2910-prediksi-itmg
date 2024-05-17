@@ -60,11 +60,6 @@ def plot_raw_data():
 	
 plot_raw_data()
 
-df_train = data[['Date','Close']]
-df_train = df_train.rename(columns={"Date": "tanngal", "Close": "harga"})
-
-#m = Prophet()
-#m.fit(df_train)
 m = pickle.load(open('rnn_model_by_teguh.sav', 'rb'))
 future = m.make_future_dataframe(periods=period)
 forecast = m.predict(future)
