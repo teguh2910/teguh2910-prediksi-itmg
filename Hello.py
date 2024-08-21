@@ -10,7 +10,7 @@ from plotly import graph_objs as go
 START = "2007-12-18"
 TODAY = date.today().strftime("%Y-%m-%d")
 
-selected_stock = ['ITMG.JK', 'BBRI.JK', 'BMRI.JK', 'BBCA.JK']
+stocks = ['ITMG.JK', 'BBRI.JK', 'BMRI.JK', 'BBCA.JK']
 # Single stock selection (Dropdown)
 selected_stock = st.selectbox('Select a stock:', stocks)
 centered_image_html = """
