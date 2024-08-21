@@ -10,14 +10,12 @@ from plotly import graph_objs as go
 START = "2007-12-18"
 TODAY = date.today().strftime("%Y-%m-%d")
 
-selected_stock = 'ITMG.JK'
+selected_stock = 'ITMG.JK,BBRI.JK,BMRI.JK,BBCA.JK'
 centered_image_html = """
-<div style="display: flex; justify-content: center; align-items: center;">
-    <img src="https://itmg.co.id/img/logo.png" width="200">
-</div>
+
 """
 st.markdown(centered_image_html, unsafe_allow_html=True)
-st.markdown("<h1 style='text-align: center;'>Prediction Stock ITMG <br> By Teguh Yuhono</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;'>Prediction Harga Saham <br> By Teguh Yuhono</h1>", unsafe_allow_html=True)
 msft = yf.Ticker(selected_stock)
 
 with st.expander("About Company"):
