@@ -12,7 +12,9 @@ TODAY = date.today().strftime("%Y-%m-%d")
 
 
 centered_image_html = """
-
+<div style="display: flex; justify-content: center; align-items: center;">
+    <img src="https://unsia.ac.id/wp-content/uploads/2022/12/logo-1.png" width="200">
+</div>
 """
 st.markdown(centered_image_html, unsafe_allow_html=True)
 st.markdown("<h1 style='text-align: center;'>Prediction Harga Saham <br> By Teguh Yuhono</h1>", unsafe_allow_html=True)
