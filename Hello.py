@@ -10,14 +10,15 @@ from plotly import graph_objs as go
 START = "2007-12-18"
 TODAY = date.today().strftime("%Y-%m-%d")
 
-stocks = ['ITMG.JK', 'BBRI.JK', 'BMRI.JK', 'BBCA.JK']
-# Single stock selection (Dropdown)
-selected_stock = st.selectbox('Select a stock:', stocks)
+
 centered_image_html = """
 
 """
 st.markdown(centered_image_html, unsafe_allow_html=True)
 st.markdown("<h1 style='text-align: center;'>Prediction Harga Saham <br> By Teguh Yuhono</h1>", unsafe_allow_html=True)
+stocks = ['ITMG.JK', 'BBRI.JK', 'BMRI.JK', 'BBCA.JK']
+# Single stock selection (Dropdown)
+selected_stock = st.selectbox('Select a stock:', stocks)
 msft = yf.Ticker(selected_stock)
 
 with st.expander("About Company"):
