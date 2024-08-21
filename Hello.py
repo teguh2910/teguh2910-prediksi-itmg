@@ -1,6 +1,8 @@
 import streamlit as st 
 from datetime import date
 import pickle
+import numpy as np
+np.float_ = np.float64
 import yfinance as yf
 from prophet.plot import plot_plotly
 from plotly import graph_objs as go
